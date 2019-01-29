@@ -11,12 +11,13 @@ import Button from "./button"
     render(){
         return(
          <div>
+             <div >
              <header id="nav">
-                <img src="../../images/logo.png" alt=""/>
-                <Button class="search"  onClick={this.SearchClick} name="Search" />
-                <Button class="save" onClick={this.SaveClick} name="Saved"/>
+                <img id="googlelogo"src="../../images/logo.png" alt=""/>
+                <Button class="navbutton"  onClick={this.SearchClick} name={this.props.name} />
 
              </header>
+             </div>
          </div>
         )
     }

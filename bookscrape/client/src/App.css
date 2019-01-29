@@ -1,3 +1,12 @@
+#googlelogo{
+  height: 14vh;
+  position: absolute;
+  left: 20%;
+  margin-top:1%
+}
+#navbar{
+  
+}
 .App {
   text-align: center;
 }
@@ -21,7 +30,21 @@
 .App-link {
   color: #61dafb;
 }
-
+.navbutton{
+  position: absolute;
+  right: 20%;
+  border:1px solid rgb(52,168,83);
+  background-color:rgb(251,188,5);
+  color: rgb(52,168,83);
+  margin-top: 1%
+}
+.titlecard{
+  border: solid 2px rgb(66,133,244);
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: .5%;
+  margin-bottom: 1%
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
