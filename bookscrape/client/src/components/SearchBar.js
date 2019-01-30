@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import "../searchbar.css"
+import axios from "axios"
 const books = require("google-books-search")
 
 //import BookSearch from "../../../API/API"
@@ -38,8 +39,17 @@ class Search extends Component{
         })  
     }
     saveClick(title, link, description, authors, thumbnail){
-        console.log(`${title} ${link} ${description} ${authors} ${thumbnail}`)
-        console.log()
+       axios({
+           method:"POST",
+           url: "/save",
+           data: {
+            title: title,
+            authors: authors,
+            description: description,
+            link: link,
+            thumbnail: thumbnail,
+           }
+       })
     }
 
     render(){
@@ -53,7 +63,7 @@ class Search extends Component{
                 this.state.results.map(result=>{
                 return(
                     <div className="bookname" key={result.title}>
-                        <h4>{result.title} <button className="search saveme" onClick= {()=>{(this.saveClick(result.title, result.link, result.description, result.authors, result.thumbnail))}}>
+                        <h4>{result.title} <button className="search saveme" onClick= {()=>{(this.saveClick(result.title, result.link, result.description, result.authors, result.thumbnail, result.id))}}>
                         Save
                         </button> <button className="search readme" ><a href={result.link} target="_blank">Read</a></button></h4>
                         <h5>Author: {result.authors.map(author=>`${author} `)}</h5>
