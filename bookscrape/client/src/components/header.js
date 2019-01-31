@@ -14,7 +14,7 @@ import Button from "./button"
              <div >
              <header id="nav">
                 <img id="googlelogo"src="../../images/logo.png" alt=""/>
-                <Button class="navbutton"  onClick={this.SearchClick} name={this.props.name} />
+                <Button class="navbutton"  onClick={this.props.onClick} name={this.props.name} />
 
              </header>
              </div>

@@ -3,8 +3,9 @@ const express = require("express")
 const router= express.Router()
 
 
-router.get("/saved", (req, res)=>{
+router.get("/saveder", (req, res)=>{
     db.Book.find({}).then(data=>res.json(data))
+    
 })
 router.post("/save", (req,res)=>{
     console.log(req.body)
@@ -17,14 +18,9 @@ router.post("/save", (req,res)=>{
         googleId: req.body.id
     })
 })
-router.delete("/delete/:id", (req,res)=>{
-    db.Book.deleteOne({id: req.id}).then(data=>res.json(data))
+router.post("/delete/:id", (req,res)=>{
+    db.Book.deleteOne({_id: req.params.id}).then(data=>res.json(data))
 })
-const BookSearch ={
-  //  index: (),
 
-    
-
-}
 
 module.exports = router
